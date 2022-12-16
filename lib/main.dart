@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:fruiterer/core/cache/cache_functions.dart';
+import 'package:fruiterer/model/apple.dart';
 import 'package:fruiterer/product/home/home_view.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 Future<void> main() async {
   await Hive.initFlutter();
-  CacheFunctions().test();
+  await Apple.cacheManager.openBox();
   runApp(const FruitererApp());
 }
 
