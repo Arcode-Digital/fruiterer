@@ -13,11 +13,12 @@ abstract class HomeViewmodel extends State<HomeView> {
   }
 
   getItems() {
-    //TODO add => get data function
-    items = Apple.mock;
+    items = Apple.cacheManager.getAllItems() ?? [];
   }
 
   update() {
-    //TODO add => update data function
+    setState(() {
+      items = Apple.cacheManager.getAllItems() ?? [];
+    });
   }
 }
